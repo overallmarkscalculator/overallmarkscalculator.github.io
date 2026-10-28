@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +31,7 @@
     body {
       font-family: sans-serif;
     }
-    
+
     input {
       font-size: 16px;
       border: 1px solid grey;
@@ -39,16 +40,15 @@
 
     input:focus {
       outline: none !important;
-      border: 2px solid #3366CB
+      border: 2px solid #3366CB;
     }
 
     input:active {
       outline: none !important;
-      border: 2px solid #3366CB
+      border: 2px solid #3366CB;
     }
-    
+
     mobile-only {
-      
     }
 
     .button-progressive {
@@ -105,7 +105,7 @@
       background-color: #233566;
       border-color: #233566;
     }
-    
+
     @media screen and (min-width: 640px) {
       mobile-only {
         display: none;
@@ -136,52 +136,64 @@
 </head>
 <body>
   <div id="body-container">
-  <h1>Grade Calculator</h1>
-  <div>
-    <p>Use this calculator to find out the overall percentage of a subject/course based on weighted averages.</p>
-  </div>
-  <div id="results">
-    <h2 style="text-align:center;">Your Results:</h2>
-    <div><b>Overall Percentage:</b>&nbsp;<a id="overall-score"></a></div>
-  </div>
-  <div>
-    <button id="reset">Reset all values</button>
-  </div>
-  <div style="display:flex; flex-wrap:wrap;">
-    <div class="container">
-      <h3>Assessment 1</h3>
-      <div><b>Marks:</b>&nbsp;&nbsp;<input class="marks"> / <input class="marks" id="marks-1"></div>
-      <div><b>Weightage:</b>&nbsp;&nbsp;<input style="width:2em;" id="marks-3">&nbsp;%</div>
+    <h1 id="page-title">Grade Calculator</h1>
+
+    <div id="introduction">
+      <p id="intro-text">Use this calculator to find out the overall percentage of a subject/course based on weighted averages.</p>
     </div>
-    <div class="container">
-      <h3>Assessment 2</h3>
-      <div><b>Marks:</b>&nbsp;&nbsp;<input class="marks"> / <input class="marks" id="marks-2"></div>
-      <div><b>Weightage:</b>&nbsp;&nbsp;<input style="width:2em;">&nbsp;%</div>
+
+    <div id="results">
+      <div><h2 id="results-title" style="text-align:center;">Your Results:</h2></div>
+      <div id="overall-result"><b id="overall-label">Overall Percentage:</b>&nbsp;<a id="overall-score"></a></div>
     </div>
-    <div class="container">
-      <h3>Assessment 3</h3>
-      <div><b>Marks:</b>&nbsp;&nbsp;<input class="marks"> / <input class="marks"></div>
-      <div><b>Weightage:</b>&nbsp;&nbsp;<input style="width:2em;">&nbsp;%</div>
+
+    <div id="reset-container">
+      <button id="reset">Reset all values</button>
     </div>
-    <div class="container">
-      <h3>Assessment 4</h3>
-      <div><b>Marks:</b>&nbsp;&nbsp;<input class="marks"> / <input class="marks"></div>
-      <div><b>Weightage:</b>&nbsp;&nbsp;<input style="width:2em;">&nbsp;%</div>
+
+    <div id="assessments-container" style="display:flex; flex-wrap:wrap;">
+
+      <div class="container" id="assessment-1">
+        <h3 id="assessment-title-1">Assessment 1</h3>
+        <div id="marks-row-1"><b id="marks-label-1">Marks:</b>&nbsp;&nbsp;<input class="marks" id="marks-earned-1"> / <input class="marks" id="marks-1"></div>
+        <div id="weightage-row-1"><b id="weightage-label-1">Weightage:</b>&nbsp;&nbsp;<input style="width:2em;" id="weightage-1">&nbsp;%</div>
+      </div>
+
+      <div class="container" id="assessment-2">
+        <h3 id="assessment-title-2">Assessment 2</h3>
+        <div id="marks-row-2"><b id="marks-label-2">Marks:</b>&nbsp;&nbsp;<input class="marks" id="marks-earned-2"> / <input class="marks" id="marks-2"></div>
+        <div id="weightage-row-2"><b id="weightage-label-2">Weightage:</b>&nbsp;&nbsp;<input style="width:2em;" id="weightage-2">&nbsp;%</div>
+      </div>
+
+      <div class="container" id="assessment-3">
+        <h3 id="assessment-title-3">Assessment 3</h3>
+        <div id="marks-row-3"><b id="marks-label-3">Marks:</b>&nbsp;&nbsp;<input class="marks" id="marks-earned-3"> / <input class="marks" id="marks-3"></div>
+        <div id="weightage-row-3"><b id="weightage-label-3">Weightage:</b>&nbsp;&nbsp;<input style="width:2em;" id="weightage-3">&nbsp;%</div>
+      </div>
+
+      <div class="container" id="assessment-4">
+        <h3 id="assessment-title-4">Assessment 4</h3>
+        <div id="marks-row-4"><b id="marks-label-4">Marks:</b>&nbsp;&nbsp;<input class="marks" id="marks-earned-4"> / <input class="marks" id="marks-4"></div>
+        <div id="weightage-row-4"><b id="weightage-label-4">Weightage:</b>&nbsp;&nbsp;<input style="width:2em;" id="weightage-4">&nbsp;%</div>
+      </div>
+
+      <div class="container" id="assessment-5">
+        <h3 id="assessment-title-5">Assessment 5</h3>
+        <div id="marks-row-5"><b id="marks-label-5">Marks:</b>&nbsp;&nbsp;<input class="marks" id="marks-earned-5"> / <input class="marks" id="marks-5"></div>
+        <div id="weightage-row-5"><b id="weightage-label-5">Weightage:</b>&nbsp;&nbsp;<input style="width:2em;" id="weightage-5">&nbsp;%</div>
+      </div>
+
+      <div class="container" id="assessment-6">
+        <h3 id="assessment-title-6">Assessment 6</h3>
+        <div id="marks-row-6"><b id="marks-label-6">Marks:</b>&nbsp;&nbsp;<input class="marks" id="marks-earned-6"> / <input class="marks" id="marks-6"></div>
+        <div id="weightage-row-6"><b id="weightage-label-6">Weightage:</b>&nbsp;&nbsp;<input style="width:2em;" id="weightage-6">&nbsp;%</div>
+      </div>
+
     </div>
-    <div class="container">
-      <h3>Assessment 5</h3>
-      <div><b>Marks:</b>&nbsp;&nbsp;<input class="marks"> / <input class="marks"></div>
-      <div><b>Weightage:</b>&nbsp;&nbsp;<input style="width:2em;">&nbsp;%</div>
+
+    <div id="calculate-container" style="font-size:20px; margin-top: 20px;">
+      <button class="button-progressive" id="calculate">Calculate marks and grade</button>
     </div>
-    <div class="container">
-      <h3>Assessment 6</h3>
-      <div><b>Marks:</b>&nbsp;&nbsp;<input class="marks"> / <input class="marks"></div>
-      <div><b>Weightage:</b>&nbsp;&nbsp;<input style="width:2em;">&nbsp;%</div>
-    </div>
-  </div>
-  <div style="font-size:20px; margin-top: 20px;">
-    <button class="button-progressive" id="calculate">Calculate marks and grade</button>
-  </div>
   </div>
 </body>
 </html>
