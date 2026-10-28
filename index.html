@@ -30,7 +30,7 @@
       
     }
 
-    button {
+    .button-progressive {
       display: inline-block;
       box-sizing: border-box;
       margin: 0;
@@ -48,12 +48,28 @@
       padding: 5px 12px;
     }
 
-    button:hover {
+    button {
+      display: inline-block;
+      box-sizing: border-box;
+      margin: 0;
+      border-radius: 2px;
+      vertical-align: middle;
+      font-family: inherit;
+      font-size: 1em;
+      font-weight: bold;
+      line-height: 1.25rem;
+      text-align: center;
+      -webkit-appearance: none;
+      border: 1px solid grey;
+      padding: 5px 12px;
+    }
+
+    .button-progressive:hover {
       background-color: #3056a9;
       border-color: #3056a9;
     }
 
-    button:active {
+    .button-progressive:active {
       background-color: #233566;
       border-color: #233566;
     }
@@ -81,7 +97,13 @@
 </head>
 <body>
   <div id="body-container">
-  <h1>Overall Marks Calculator</h1>
+  <h1>Grade Calculator</h1>
+  <div>
+    <p>Use this calculator to find out the overall percentage of a subject/course based on weighted averages.</p>
+  </div>
+  <div>
+    <button>Reset all values</button>
+  </div>
   <div style="display:flex; flex-wrap:wrap;">
     <div class="container">
       <h3>Assessment 1</h3>
@@ -115,7 +137,7 @@
     </div>
   </div>
   <div style="font-size:20px; margin-top: 20px;">
-    <button>Calculate marks and grade</button>
+    <button class="button-progressive">Calculate marks and grade</button>
   </div>
   </div>
 </body>
