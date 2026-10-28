@@ -29,6 +29,34 @@
     mobile-only {
       
     }
+
+    button {
+      display: inline-block;
+      box-sizing: border-box;
+      margin: 0;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 2px;
+      vertical-align: middle;
+      font-family: inherit;
+      font-size: 1em;
+      font-weight: bold;
+      line-height: 1.25rem;
+      text-align: center;
+      -webkit-appearance: none;
+      border-color: #36c
+      background-color: #36c;
+    }
+
+    button:hover {
+      background-color: #3056a9;
+      border-color: #3056a9;
+    }
+
+    button:active {
+      background-color: #233566;
+      border-color: #233566;
+    }
     
     @media screen and (min-width: 640px) {
       mobile-only {
@@ -85,6 +113,9 @@
       <div><b>Marks:</b>&nbsp;&nbsp;<input class="marks"> / <input class="marks"></div>
       <div><b>Weightage:</b>&nbsp;&nbsp;<input style="width:2em;">&nbsp;%</div>
     </div>
+  </div>
+  <div style="font-size:20px">
+    <button>Calculate marks and grade</button>
   </div>
   </div>
 </body>
