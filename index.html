@@ -9,39 +9,35 @@
     body {
       font-family: sans-serif;
     }
-    table {
-      width: 100%;
-    }
+    
     input {
       font-size: 16px;
       border: 1px solid grey;
       border-radius: 1px !important;
     }
+    
     mobile-only {
       
     }
+    
     @media screen and (min-width: 640px) {
       mobile-only {
         display: none;
       }
     }
+
+    .marks {
+      width: 3em;
+    }
   </style>
 </head>
 <body>
   <h1>Overall Marks Calculator</h1>
-  <table>
-    <tr>
-      <th>Assessment</th>
-      <th>Score</th>
-      <th>Total Marks</th>
-      <th>Weightage</th>
-    </tr>
-    <tr>
-      <td>WA1</td>
-      <td><input placeholder="WA1 Marks"></td>
-      <td><input placeholder="WA1 Total"></td>
-      <td><input placeholder="WA1 Weightage">%</td>
-    </tr>
-  </table>
+  <h3>Assessment 1</h3>
+  <div style="display:flex; flex-wrap:wrap;">
+    <div>
+      <b>Marks:</b>&nbsp;<input class="marks"> / <input class="marks">
+    </div>
+  </div>
 </body>
 </html>
