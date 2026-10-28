@@ -125,6 +125,13 @@
     #body-container {
       margin-left: 5px;
     }
+
+    #results {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60%;
+    }
   </style>
 </head>
 <body>
@@ -133,18 +140,22 @@
   <div>
     <p>Use this calculator to find out the overall percentage of a subject/course based on weighted averages.</p>
   </div>
+  <div id="results">
+    <h2 style="text-align:center;">Your Results:</h2>
+    <div><b>Overall Percentage:</b>&nbsp;<a id="overall-score"></a></div>
+  </div>
   <div>
-    <button>Reset all values</button>
+    <button id="reset">Reset all values</button>
   </div>
   <div style="display:flex; flex-wrap:wrap;">
     <div class="container">
       <h3>Assessment 1</h3>
-      <div><b>Marks:</b>&nbsp;&nbsp;<input class="marks"> / <input class="marks"></div>
-      <div><b>Weightage:</b>&nbsp;&nbsp;<input style="width:2em;">&nbsp;%</div>
+      <div><b>Marks:</b>&nbsp;&nbsp;<input class="marks"> / <input class="marks" id="marks-1"></div>
+      <div><b>Weightage:</b>&nbsp;&nbsp;<input style="width:2em;" id="marks-3">&nbsp;%</div>
     </div>
     <div class="container">
       <h3>Assessment 2</h3>
-      <div><b>Marks:</b>&nbsp;&nbsp;<input class="marks"> / <input class="marks"></div>
+      <div><b>Marks:</b>&nbsp;&nbsp;<input class="marks"> / <input class="marks" id="marks-2"></div>
       <div><b>Weightage:</b>&nbsp;&nbsp;<input style="width:2em;">&nbsp;%</div>
     </div>
     <div class="container">
@@ -169,7 +180,7 @@
     </div>
   </div>
   <div style="font-size:20px; margin-top: 20px;">
-    <button class="button-progressive">Calculate marks and grade</button>
+    <button class="button-progressive" id="calculate">Calculate marks and grade</button>
   </div>
   </div>
 </body>
