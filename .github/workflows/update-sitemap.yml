@@ -22,11 +22,14 @@ jobs:
         with:
           fetch-depth: 0
 
+
       - name: Generate sitemap
         uses: cicirello/generate-sitemap@v1
         with:
           base-url-path: https://overallmarkscalculator.github.io
           date-only: true
+          exclude-paths: google9cfe039434b52320.html
+
 
       - name: Commit updated sitemap
         uses: stefanzweifel/git-auto-commit-action@v5
