@@ -136,6 +136,7 @@
       padding-bottom: 15px;
       border: 1px solid #D1D9DF;
       border-radius: 3px;
+      displa: none;
     }
 
     p, #overall-result, #overall-grade-cont {
@@ -158,7 +159,7 @@
     <div id="results">
       <div><h2 id="results-title" style="text-align:center;">Your Results:</h2></div>
       <div id="overall-result"><b>Overall Percentage:</b>&nbsp;<a id="overall-score"></a></div>
-      <div id="overall-grade-cont"><b>Overall Percentage:</b>&nbsp;<a id="overall-grade"></a></div>
+      <div id="overall-grade-cont"><b>Overall Grade:</b>&nbsp;<a id="overall-grade"></a></div>
     </div>
     </div>
 
@@ -284,7 +285,7 @@
       } else {
         grade = "U";
       }
-  
+      document.getElementById("results").style.display = "block";
       document.getElementById("overall-score").textContent =
         percentage.toFixed(2) + "%";
   
@@ -292,6 +293,7 @@
     }
   
     function resetCalculator() {
+      document.getElementById("results").style.display = "none";
       for (let i = 1; i <= 6; i++) {
         document.getElementById(`marks-earned-${i}`).value = "";
         document.getElementById(`marks-${i}`).value = "";
