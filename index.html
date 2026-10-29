@@ -210,5 +210,100 @@
       <button class="button-progressive" id="calculate">Calculate marks and grade</button>
     </div>
   </div>
+  <script>
+    const calculateButton = document.getElementById("calculate");
+    const resetButton = document.getElementById("reset");
+  
+    function calculateResults() {
+      let total = 0;
+      let totalWeightage = 0;
+  
+      for (let i = 1; i <= 6; i++) {
+        const earnedInput = document.getElementById(`marks-earned-${i}`);
+        const maximumInput = document.getElementById(`marks-${i}`);
+        const weightageInput = document.getElementById(`weightage-${i}`);
+  
+        const earnedText = earnedInput.value.trim();
+        const maximumText = maximumInput.value.trim();
+        const weightageText = weightageInput.value.trim();
+  
+        // Ignore assessments with all fields empty.
+        if (!earnedText && !maximumText && !weightageText) {
+          continue;
+        }
+  
+        // Require all three fields for an entered assessment.
+        if (!earnedText || !maximumText || !weightageText) {
+          alert(`Please complete all fields for Assessment ${i}.`);
+          return;
+        }
+  
+        const earned = Number(earnedText);
+        const maximum = Number(maximumText);
+        const weightage = Number(weightageText);
+  
+        if (
+          !Number.isFinite(earned) ||
+          !Number.isFinite(maximum) ||
+          !Number.isFinite(weightage) ||
+          earned < 0 ||
+          maximum <= 0 ||
+          earned > maximum ||
+          weightage <= 0 ||
+          weightage > 100
+        ) {
+          alert(`Please enter valid values for Assessment ${i}.`);
+          return;
+        }
+  
+        total += (earned / maximum) * weightage;
+        totalWeightage += weightage;
+      }
+  
+      if (totalWeightage === 0) {
+        alert("Please enter at least one assessment.");
+        return;
+      }
+  
+      if (Math.abs(totalWeightage - 100) > 0.000001) {
+        alert(`Your weightages total ${totalWeightage}%. They must total 100%.`);
+        return;
+      }
+  
+      const percentage = total;
+      let grade;
+  
+      if (percentage >= 70) {
+        grade = "A";
+      } else if (percentage >= 60) {
+        grade = "B";
+      } else if (percentage >= 50) {
+        grade = "C";
+      } else if (percentage >= 40) {
+        grade = "D";
+      } else {
+        grade = "U";
+      }
+  
+      document.getElementById("overall-score").textContent =
+        percentage.toFixed(2) + "%";
+  
+      document.getElementById("overall-grade").textContent = grade;
+    }
+  
+    function resetCalculator() {
+      for (let i = 1; i <= 6; i++) {
+        document.getElementById(`marks-earned-${i}`).value = "";
+        document.getElementById(`marks-${i}`).value = "";
+        document.getElementById(`weightage-${i}`).value = "";
+      }
+  
+      document.getElementById("overall-score").textContent = "";
+      document.getElementById("overall-grade").textContent = "";
+    }
+  
+    calculateButton.addEventListener("click", calculateResults);
+    resetButton.addEventListener("click", resetCalculator);
+  </script>
 </body>
 </html>
